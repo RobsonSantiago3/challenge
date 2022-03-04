@@ -6,7 +6,6 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
@@ -22,7 +21,7 @@ import com.challenge.metadata.repositorys.AcademicClassRepository;
 import com.challenge.metadata.repositorys.CourseRepository;
 import com.challenge.metadata.repositorys.StudentRepository;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(MockitoJUnitRunner.Silent.class)
 public class AcademicClassServiceImplTest {
 	@InjectMocks
 	private AcademicClassServiceImpl academicClassService;
@@ -99,32 +98,7 @@ public class AcademicClassServiceImplTest {
 		when(studentRepository.getById(6l)).thenReturn(studentWith4Course());
 		when(academicClassRepository.findByCourseId(6l)).thenReturn(null);
 		assertTrue(academicClassService.ernrollingStudentInCourse(6l, 6l));
-		
-		
-	}
 
-	@Test
-	public final void testStudentPerCourse() {
-		// TODO
-		throw new RuntimeException("not yet implemented");
-	}
-
-	@Test
-	public final void testCoursePerStudent() {
-		// TODO
-		throw new RuntimeException("not yet implemented");
-	}
-
-	@Test
-	public final void testStudentsWithoutAnyCourses() {
-		// TODO
-		throw new RuntimeException("not yet implemented");
-	}
-
-	@Test
-	public final void testCoursesWithoutAnyStudents() {
-		// TODO
-		throw new RuntimeException("not yet implemented");
 	}
 
 	private Student studentWith5Course() {

@@ -11,7 +11,7 @@ import com.challenge.metadata.model.Course;
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
 	
-	@Query("SELECT a from Course as a where a.academicClass is null")
+	@Query("SELECT a from Course as a where a.courses is null")
 	List<Course> findByIsNullAcademicClass();
 
 }
